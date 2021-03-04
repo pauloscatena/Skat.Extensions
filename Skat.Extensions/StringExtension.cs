@@ -14,8 +14,8 @@ namespace Skat.Extensions
         /// </returns>
         public static bool IsExactAnagram(this string value, string compare)
         {
-            var x1 = value.ToCharArray();
-            var x2 = compare.ToCharArray();
+            var x1 = value.RemoveSpacesAndPunctuation().ToCharArray();
+            var x2 = compare.RemoveSpacesAndPunctuation().ToCharArray();
 
             Array.Sort(x1);
             Array.Sort(x2);
@@ -37,6 +37,44 @@ namespace Skat.Extensions
                 }
             }
 
+            return result;
+        }
+
+        /// <summary>
+        /// Removes all characters except number and letters
+        /// </summary>
+        /// <param name="value">string to test</param>
+        /// <returns>
+        /// String containing only numbers and letters
+        /// </returns>
+        public static string RemoveSpacesAndPunctuation(this string value)
+        {
+            string result = string.Empty;
+
+            foreach(char c in value)
+            {
+                var ascii = (int)c;
+                if ((ascii >= 48 && ascii <= 57) ||
+                    (ascii >= 65 && ascii <= 90) ||
+                    (ascii >= 97 && ascii <= 122))
+                    result += c;
+            }
+
+            return result;
+        }
+
+        public static bool IsPalindrome(this string value)
+        {
+            value = value.RemoveSpacesAndPunctuation().ToLower();
+            bool result = true;
+            for(int i = 0; i < value.Length; i++)
+            {
+                if (value[i] != value[(value.Length - 1) - i])
+                {
+                    result = false;
+                }
+
+            }
             return result;
         }
     }
