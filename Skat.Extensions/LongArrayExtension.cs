@@ -5,6 +5,13 @@ namespace Skat.Extensions
 {
     public static class LongArrayExtension
     {
+        /// <summary>
+        /// Given an array of long numbers, returns its maximum common divider
+        /// </summary>
+        /// <param name="numbers">Numbers to check</param>
+        /// <returns>
+        /// MCD from its decomposition
+        /// </returns>
         public static long MaximumCommonDivider(this long[] numbers)
         {
             var intermediate = GetDecomposedArray(numbers);
@@ -19,6 +26,13 @@ namespace Skat.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Given an array of long numbers, returns its minimum common multiple
+        /// </summary>
+        /// <param name="numbers">Numbers to check</param>
+        /// <returns>
+        /// MCM from its decomposition
+        /// </returns>
         public static long MinimumCommonMultiple(this long[] numbers)
         {
             var intermediate = GetDecomposedArray(numbers);
@@ -31,11 +45,26 @@ namespace Skat.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Given an array of long, returns its cannonical decomposition
+        /// </summary>
+        /// <param name="numbers">Numbers to decompose</param>
+        /// <returns>
+        /// List of decomposition numbers
+        /// </returns>
         public static List<long> Decompose(this long[] numbers)
         {
             return GetDecomposedArray(numbers).All;
         }
 
+        /// <summary>
+        /// Decomposes an array of long numbers
+        /// </summary>
+        /// <param name="number">Numbers to test</param>
+        /// <returns>
+        /// All -> All decomposition values
+        /// Common -> Only the decomposition values that were divisible by whole line
+        /// </returns>
         private static DecompositionResult GetDecomposedArray(long[] number)
         {
             long[] clone = (long[])number.Clone();
@@ -79,6 +108,10 @@ namespace Skat.Extensions
             return result;
         }
 
+
+        /// <summary>
+        /// Support class
+        /// </summary>
         class DecompositionResult
         {
             public DecompositionResult()

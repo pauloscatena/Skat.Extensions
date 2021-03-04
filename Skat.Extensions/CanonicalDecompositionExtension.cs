@@ -4,12 +4,25 @@ namespace Skat.Extensions
 {
     public static class CanonicalDecompositionExtension
     {
-
+        /// <summary>
+        /// Given a number, decomposes it cannonnically
+        /// </summary>
+        /// <param name="number">Number to decompose</param>
+        /// <returns>
+        /// List of decomposition numbers
+        /// </returns>
         public static List<long> Decompose(this long number)
         {
             return DecomposeNumber(number);
         }
 
+        /// <summary>
+        /// Given a number, decomposes it cannonnically
+        /// </summary>
+        /// <param name="number">Number to decompose</param>
+        /// <returns>
+        /// List of decomposition numbers
+        /// </returns>
         private static List<long> DecomposeNumber(long number)
         {
             List<long> result = new List<long>();
