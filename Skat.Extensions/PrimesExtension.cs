@@ -1,9 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Skat.Extensions
 {
     public static class PrimesExtension
     {
+        /// <summary>
+        /// Returns a list of primes less than given number
+        /// </summary>
+        /// <param name="value">reference number</param>
+        /// <returns>
+        /// List containing primes until the reference number
+        /// </returns>
+        public static List<long> GetLowerPrimes(this long value)
+        {
+            List<long> result = new List<long>();
+            long number = 2;
+            while(number < value)
+            {
+                result.Add(number);
+                number = number.NextPrime();
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Given a long, returns if it is prime
         /// </summary>
@@ -66,7 +87,7 @@ namespace Skat.Extensions
 
         /// <summary>
         /// Will return if a number is prime by dividing it by possible numbers
-        /// Logic: the valid range is between 2 and half of the number. We can disconsider all other numbers
+        /// Logic: the valid range is between 2 and square root of the number. We can disconsider all other numbers
         /// </summary>
         /// <param name="number">number to test</param>
         /// <returns>
@@ -79,7 +100,13 @@ namespace Skat.Extensions
                 return false;
 
             bool result = true;
-            long check = (long)Math.Sqrt(number);
+            long check = (long)Math.Round(Math.Sqrt(number), 0);
+
+            // Transforms check into an odd number  (above 2, all primes are odd...)
+            if(check > 2 && check % 2 == 0)
+            {
+                check++;
+            }
 
             while (result && check > 1)
             {
@@ -87,7 +114,11 @@ namespace Skat.Extensions
                 {
                     result = false;
                 }
-                check--;
+
+                if (check < 10)
+                    check--;
+                else
+                    check -= 2;
             }
 
             return result;
