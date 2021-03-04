@@ -1,4 +1,6 @@
-﻿namespace Skat.Extensions
+﻿using System;
+
+namespace Skat.Extensions
 {
     public static class PrimesExtension
     {
@@ -73,8 +75,11 @@
         /// </returns>
         private static bool CheckPrimeDivision(long number)
         {
+            if (number < 2)
+                return false;
+
             bool result = true;
-            long check = number / 2;
+            long check = (long)Math.Sqrt(number);
 
             while (result && check > 1)
             {

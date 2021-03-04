@@ -13,7 +13,7 @@ namespace Skat.Extensions.Tests
         [TestCase(23)]
         [TestCase(31)]
         [TestCase(67)]
-        //[TestCase(17180131327)] // 2 min
+        [TestCase(17180131327)]
         public void MustBePrime(long number)
         {
             bool pass = number.IsPrime();
