@@ -5,6 +5,11 @@ namespace Skat.Extensions
 {
     public static class ArmstrongNumberExtension
     {
+        /// <summary>
+        /// Check if number is an Armstrong Number (sum of cubes of its digits)
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static bool IsArmstrongNumber(this long number)
         {
             var digits = number.ExtractDigits();
@@ -17,6 +22,11 @@ namespace Skat.Extensions
             return sum == number;
         }
 
+        /// <summary>
+        /// Return all Armstrong Numbers less than given number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static List<long> GetArmstrongNumbers(this long number)
         {
             List<long> result = new List<long>();
