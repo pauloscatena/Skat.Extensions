@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Skat.Extensions
+namespace Skat.Extensions.StringExtensions
 {
     public static class StringExtension
     {

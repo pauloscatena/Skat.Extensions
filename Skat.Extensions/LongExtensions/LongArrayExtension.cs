@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Skat.Extensions
+namespace Skat.Extensions.LongExtensions
 {
     public static class LongArrayExtension
     {

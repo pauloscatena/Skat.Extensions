@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Skat.Extensions.StringExtensions;
 
 namespace Skat.Extensions.Tests
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Skat.Extensions
+namespace Skat.Extensions.LongExtensions
 {
     public static class ArmstrongNumberExtension
     {

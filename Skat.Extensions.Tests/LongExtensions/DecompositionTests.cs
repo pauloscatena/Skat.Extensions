@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Skat.Extensions.LongExtensions;
 using System.Collections.Generic;
 
 namespace Skat.Extensions.Tests
@@ -47,7 +48,7 @@ namespace Skat.Extensions.Tests
         {
             foreach(var tc in testSources)
             {
-                List<long> check = tc.Number.Decompose();
+                List<long> check = tc.Number.CanonicalDecompose();
                 Assert.AreEqual(check.Count, tc.Decomposed.Count);
                 for(int i = 0; i < tc.Decomposed.Count; i++)
                 {

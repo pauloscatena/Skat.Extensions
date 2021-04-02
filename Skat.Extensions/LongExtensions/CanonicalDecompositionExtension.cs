@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Skat.Extensions
+namespace Skat.Extensions.LongExtensions
 {
     public static class CanonicalDecompositionExtension
     {
@@ -11,7 +11,7 @@ namespace Skat.Extensions
         /// <returns>
         /// List of decomposition numbers
         /// </returns>
-        public static List<long> Decompose(this long number)
+        public static List<long> CanonicalDecompose(this long number)
         {
             return DecomposeNumber(number);
         }
