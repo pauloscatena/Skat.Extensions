@@ -50,7 +50,7 @@ namespace Skat.Extensions.LongExtensions
             }
 
             return result;
-        }       
+        }
 
     }
 }

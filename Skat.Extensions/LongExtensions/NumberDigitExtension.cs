@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Skat.Extensions.LongExtensions
 {
@@ -13,7 +12,7 @@ namespace Skat.Extensions.LongExtensions
         public static List<long> ExtractDigits(this long number)
         {
             List<long> result = new List<long>();
-            long aux = number < 0 ? number * -1: number;
+            long aux = number < 0 ? number * -1 : number;
 
             while (aux > 0)
             {

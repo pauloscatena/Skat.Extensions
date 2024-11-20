@@ -16,7 +16,7 @@ namespace Skat.Extensions.Tests.XUnit.LongExtensions
         }
 
         private static List<CheckDecomposition> testSources;
-        
+
         public void Setup()
         {
             testSources = new List<CheckDecomposition>();
@@ -44,15 +44,15 @@ namespace Skat.Extensions.Tests.XUnit.LongExtensions
         public void TestDecomposition()
         {
             Setup();
-            foreach(var tc in testSources)
+            foreach (var tc in testSources)
             {
                 List<long> check = tc.Number.CanonicalDecompose();
                 Assert.Equal(check.Count, tc.Decomposed.Count);
-                for(int i = 0; i < tc.Decomposed.Count; i++)
+                for (int i = 0; i < tc.Decomposed.Count; i++)
                 {
                     Assert.Equal(tc.Decomposed[i], check[i]);
                 }
             }
-        }       
+        }
     }
 }

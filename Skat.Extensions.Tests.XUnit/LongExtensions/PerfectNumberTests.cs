@@ -28,7 +28,7 @@ namespace Skat.Extensions.Tests.XUnit.LongExtensions
         {
             var perfects = number.GetPerfectNumbers();
             Assert.Equal(perfects.Count, expectedResult.Length);
-            for(int i = 0; i < perfects.Count; i++)
+            for (int i = 0; i < perfects.Count; i++)
             {
                 Assert.Equal(perfects[i], expectedResult[i]);
             }

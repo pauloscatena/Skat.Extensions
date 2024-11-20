@@ -16,7 +16,7 @@ namespace Skat.Extensions.LongExtensions
         {
             List<long> result = new List<long>();
             long number = 2;
-            while(number < value)
+            while (number < value)
             {
                 result.Add(number);
                 number = number.NextPrime();
@@ -78,7 +78,7 @@ namespace Skat.Extensions.LongExtensions
         private static long GetNextPrime(long number)
         {
             long next = number + 1;
-            while(!next.IsPrime())
+            while (!next.IsPrime())
             {
                 next++;
             }
@@ -103,14 +103,14 @@ namespace Skat.Extensions.LongExtensions
             long check = (long)Math.Round(Math.Sqrt(number), 0);
 
             // Transforms check into an odd number  (above 2, all primes are odd...)
-            if(check > 2 && check % 2 == 0)
+            if (check > 2 && check % 2 == 0)
             {
                 check++;
             }
 
             while (result && check > 1)
             {
-                if(number % check == 0)
+                if (number % check == 0)
                 {
                     result = false;
                 }
@@ -135,7 +135,7 @@ namespace Skat.Extensions.LongExtensions
         /// </returns>
         private static bool CheckPrimeEnding(long number)
         {
-            if(number > 9)
+            if (number > 9)
             {
                 var lastDigit = number % 10;
                 return lastDigit == 1 || lastDigit == 3 || lastDigit == 7 || lastDigit == 9;

@@ -51,7 +51,7 @@ namespace Skat.Extensions.StringExtensions
         {
             string result = string.Empty;
 
-            foreach(char c in value)
+            foreach (char c in value)
             {
                 var ascii = (int)c;
                 if ((ascii >= 48 && ascii <= 57) ||
@@ -67,7 +67,7 @@ namespace Skat.Extensions.StringExtensions
         {
             value = value.RemoveSpacesAndPunctuation().ToLower();
             bool result = true;
-            for(int i = 0; i < value.Length; i++)
+            for (int i = 0; i < value.Length; i++)
             {
                 if (value[i] != value[(value.Length - 1) - i])
                 {

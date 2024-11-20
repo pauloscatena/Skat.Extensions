@@ -53,12 +53,12 @@ namespace Skat.Extensions.Tests.XUnit.LongExtensions
         [Theory]
         [InlineData(4, new long[] { 2, 3 })]
         [InlineData(7, new long[] { 2, 3, 5 })]
-        [InlineData(23, new long[] { 2, 3, 5, 7, 11, 13, 17, 19})]
-        [InlineData(31, new long[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29})]
+        [InlineData(23, new long[] { 2, 3, 5, 7, 11, 13, 17, 19 })]
+        [InlineData(31, new long[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 })]
         public void TestListPrimes(long number, long[] check)
         {
             List<long> primes = number.GetLowerPrimes();
-            for(int i = 0; i < check.Length; i++)
+            for (int i = 0; i < check.Length; i++)
             {
                 Assert.Equal(check[i], primes[i]);
             }
