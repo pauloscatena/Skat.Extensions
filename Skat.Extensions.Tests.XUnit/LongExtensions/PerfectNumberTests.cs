@@ -1,6 +1,6 @@
 ﻿using Skat.Extensions.LongExtensions;
 
-namespace Skat.Extensions.Tests
+namespace Skat.Extensions.Tests.XUnit.LongExtensions
 {
     public class PerfectNumberTests
     {
