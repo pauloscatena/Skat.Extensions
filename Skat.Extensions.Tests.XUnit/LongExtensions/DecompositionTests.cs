@@ -1,8 +1,6 @@
-﻿using NUnit.Framework;
-using Skat.Extensions.LongExtensions;
-using System.Collections.Generic;
+﻿using Skat.Extensions.LongExtensions;
 
-namespace Skat.Extensions.Tests
+namespace Skat.Extensions.Tests.XUnit.LongExtensions
 {
     public class DecompositionTests
     {
@@ -17,9 +15,8 @@ namespace Skat.Extensions.Tests
             public List<long> Decomposed { get; set; }
         }
 
-        public static List<CheckDecomposition> testSources;
-
-        [SetUp]
+        private static List<CheckDecomposition> testSources;
+        
         public void Setup()
         {
             testSources = new List<CheckDecomposition>();
@@ -43,16 +40,17 @@ namespace Skat.Extensions.Tests
 
         }
 
-        [Test]
+        [Fact]
         public void TestDecomposition()
         {
+            Setup();
             foreach(var tc in testSources)
             {
                 List<long> check = tc.Number.CanonicalDecompose();
-                Assert.AreEqual(check.Count, tc.Decomposed.Count);
+                Assert.Equal(check.Count, tc.Decomposed.Count);
                 for(int i = 0; i < tc.Decomposed.Count; i++)
                 {
-                    Assert.AreEqual(tc.Decomposed[i], check[i]);
+                    Assert.Equal(tc.Decomposed[i], check[i]);
                 }
             }
         }       
